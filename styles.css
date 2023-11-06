@@ -395,7 +395,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    width: 22em;
+    width: 24em;
     padding: 2em 0;
     background: #eceff1; /* Adjust the background color as needed */
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12);
@@ -427,7 +427,7 @@ button:hover {
 }
 
 #projects .card .content {
-    width: 18em;
+    width: 20em;
     max-width: 80%;
 }
 
@@ -437,12 +437,21 @@ button:hover {
     transition: all 0.35s ease;
 }
 
-#projects .card h6 {
-    color: #26a69a; /* Adjust the color as needed */
+#projects .card h1 {
     font-weight: 600;
     text-transform: uppercase;
     margin: 0;
     letter-spacing: 2px;
+    text-align: center;
+}
+
+
+#projects .card h4 {
+    color: #26a69a; /* Adjust the color as needed */
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 #projects .card .hover_content {
