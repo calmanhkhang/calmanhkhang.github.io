@@ -1,82 +1,486 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #E6F4F1; /* Light blue teal background */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
+/*** --- Header --- ***/
 header {
-    background-color: #008080; /* Teal */
-    color: white;
-    text-align: center;
-    padding: 2em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background: #b2dfdb;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
 }
 
-header h1 {
-    margin-bottom: 0.5em;
+.profile-photo {
+    flex: 0 0 auto;
+    margin-right: 20px; /* Adjust the margin as needed */
+    position: relative; /* Make the profile photo relative to its container */
 }
 
+/*** --- Dialogue --- ***/
+
+.dialogue-container {
+    display: flex;
+    align-items: center;
+}
+
+.dialogue-box {
+    background-color: #26a69a;
+    color: #fff;
+    padding: 10px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 20px;
+    font-size: 1.2em;
+    position: relative;
+    width: 250px; /* Adjust the width as needed */
+}
+
+.dialogue-box::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Adjust the position to make half of the larger arrow go under the box */
+    left: -0px; /* Adjust the position to make half of the larger arrow touch the box */
+    transform: rotate(-90deg); /* Rotate the larger arrow counter-clockwise */
+    border-width: 20px 0 20px 20px; /* Increase border width for a larger arrow */
+    border-style: solid;
+    border-color: transparent transparent transparent #26a69a; /* Match the background color of the dialogue box */
+}
+
+
+.show-dialogue {
+    transform: scale(1);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*** --- General Styling --- ***/
 header img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1em;
-    border: 4px solid white;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background-color: #004040; /* Darker teal */
-    padding: 1em 0;
-}
-
-nav li {
-    margin: 0 1em;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #FFA000; /* Amber on hover */
 }
 
 section {
-    background-color: white;
-    padding: 2em;
-    border-radius: 8px;
-    margin: 1em 0;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h2 {
-    margin-bottom: 1em;
-    color: #008080; /* Teal */
+    text-align: center;
+    font-size: 2.5em;
+    color: #26a69a;
 }
 
 p {
-    line-height: 1.6;
+    text-align: center;
+    color: #555;
+    font-size: 1.1em;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    header img {
-        width: 120px;
-        height: 120px;
-    }
+a {
+    color: #26a69a;
+    text-decoration: none;
+}
 
-    section {
-        padding: 1em;
+a:hover {
+    color: #00766c;
+}
+
+footer {
+    background: #b2dfdb;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social {
+    margin: 0 10px;
+}
+
+.social img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social img:hover {
+    transform: scale(1.2);
+}
+
+/*** --- Timeline --- ***/
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    padding: 40px 0;
+    width: 1000px;
+    box-sizing: border-box;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #333; /* Updated color */
+}
+
+.timeline ul {
+    padding: 0;
+    margin: 0;
+}
+
+.timeline ul li {
+    list-style: none;
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.timeline ul li:nth-child(odd) {
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.timeline ul li:nth-child(even) {
+    float: right;
+    text-align: left;
+    clear: both;
+}
+
+.content {
+    padding-bottom: 20px;
+}
+
+.timeline ul li:nth-child(odd):before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 24px;
+    right: -6px;
+    background: #26a69a; /* Updated color */
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #26a69a; /* Updated color */
+}
+
+.timeline ul li:nth-child(even):before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 24px;
+    left: -4px;
+    background: #26a69a; /* Updated color */
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #26a69a; /* Updated color */
+}
+
+.timeline ul li h3 {
+    padding: 0;
+    margin: 0;
+    color: #26a69a; /* Updated color */
+    font-weight: 600;
+}
+
+.timeline ul li p {
+    margin: 0px 0 0;
+    padding: 0;
+    text-align: left;
+    margin-block-end: 1.5em;
+}
+
+.timeline ul li h4 {
+    margin-block-start: 7px;
+    margin-block-end: 5px;
+}
+
+.timeline ul li .time h4 {
+    white-space: nowrap; /* Added property to prevent line breaks */
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.timeline ul li:nth-child(odd) .time {
+    position: absolute;
+    top: 12px;
+    left: 550px;
+    margin: 0;
+    padding: 8px 16px;
+    background: #26a69a; /* Updated color */
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px #26a69a; /* Updated color */
+}
+
+.timeline ul li:nth-child(even) .time {
+    position: absolute;
+    top: 12px;
+    right: 550px;
+    margin: 0;
+    padding: 8px 16px;
+    background: #26a69a; /* Updated color */
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px #26a69a; /* Updated color */
+}
+
+@media (max-width: 1000px) {
+    .timeline {
+        width: 100%;
     }
+}
+
+@media (max-width: 767px) {
+    .timeline {
+        width: 100%;
+        padding-bottom: 0;
+    }
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .timeline:before {
+        left: 20px;
+        height: 100%;
+    }
+    .timeline ul li:nth-child(odd),
+    .timeline ul li:nth-child(even) {
+        width: 100%;
+        text-align: left;
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+    .timeline ul li:nth-child(odd):before,
+    .timeline ul li:nth-child(even):before {
+        top: -18px;
+        left: 16px;
+    }
+    .timeline ul li:nth-child(odd) .time,
+    .timeline ul li:nth-child(even) .time {
+        top: -30px;
+        left: 50px;
+        right: inherit;
+    }
+}
+
+/*** --- Resume --- ***/
+.resume-box {
+    text-align: center;
+    background: #26a69a; /* Background color */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+    transition: box-shadow 0.3s ease; /* Smooth box-shadow transition on hover */
+    cursor: pointer;
+    max-width: 200px; /* Adjust the maximum width as needed */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle box-shadow effect */
+}
+
+.resume-box a {
+    text-decoration: none;
+    color: #fff; /* Text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resume-box:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Enhanced box-shadow effect on hover */
+}
+
+.resume-box img {
+    width: 50px; /* Adjust the width as needed */
+}
+
+.resume-box p {
+    margin: 5px 0 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+/*** --- Contact --- ***/
+
+#contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #26a69a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease; /* Smooth box-shadow transition on hover */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle box-shadow effect */
+}
+
+button:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Enhanced box-shadow effect on hover */
+}
+
+
+/* Card */
+#projects .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#projects .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 22em;
+    padding: 2em 0;
+    background: #eceff1; /* Adjust the background color as needed */
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12);
+    transition: all 0.35s ease;
+}
+
+#projects .card::before,
+#projects .card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #26a69a; /* Adjust the color as needed */
+    height: 4px;
+}
+
+#projects .card::before {
+    width: 0;
+    opacity: 0;
+    transition: opacity 0s ease, width 0s ease;
+    transition-delay: 0.5s;
+}
+
+#projects .card::after {
+    width: 100%;
+    background: #eceff1; /* Adjust the background color to match the card */
+    transition: width 0.5s ease;
+}
+
+#projects .card .content {
+    width: 18em;
+    max-width: 80%;
+}
+
+#projects .card .logo {
+    margin: 0 0 1em;
+    width: 10.625em;
+    transition: all 0.35s ease;
+}
+
+#projects .card h6 {
+    color: #26a69a; /* Adjust the color as needed */
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+#projects .card .hover_content {
+    overflow: hidden;
+    max-height: 0;
+    transform: translateY(1em);
+    transition: all 0.55s ease;
+}
+
+#projects .card .hover_content p {
+    margin: 1.5em 0 0;
+    color: #555; /* Adjust the color as needed */
+    line-height: 1.4em;
+}
+
+#projects .card:hover {
+    width: 24em;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+#projects .card:hover::before {
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease;
+    transition-delay: 0s;
+}
+
+#projects .card:hover::after {
+    width: 0;
+    opacity: 0;
+    transition: width 0s ease;
+}
+
+#projects .card:hover .logo {
+    margin-bottom: 0.5em;
+}
+
+#projects .card:hover .hover_content {
+    max-height: 10em;
+    transform: none;
 }
