@@ -1,6 +1,6 @@
-// Typing effect for the dialogue in header
+// Typing effect for the dialogue in about me section
 document.addEventListener("DOMContentLoaded", function() {
-    const dialogueContainer = document.querySelector('.dialogue-box');
+    const dialogueContainer = document.querySelector('#about-me .dialogue-box');
     dialogueContainer.style.opacity = '0';
 
     setTimeout(function() {
@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Sending validation
-// Your existing code for form validation
-
 // Card effect
 $(document).ready(function(){
   var zindex = 10;
@@ -109,6 +107,33 @@ $(document).ready(function(){
     }
     
   });
+});
+
+
+// Header
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll("header nav ul li a");
+
+    for (const navLink of navLinks) {
+        navLink.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = navLink.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            const headerHeight = document.querySelector("header").offsetHeight;
+            const offsetPosition = targetElement.offsetTop - headerHeight + 20; // Adjust padding as needed
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        });
+    }
 });
 
 
