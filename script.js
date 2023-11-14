@@ -136,4 +136,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Function to display the demo video modal
+function showDemoVideo() {
+  var modal = document.getElementById("demoModal");
+  modal.style.display = "block";
+
+  // Close the modal if the user clicks outside the video region
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      closeDemoVideo();
+    }
+  };
+}
+
+// Function to close the demo video modal
+function closeDemoVideo() {
+  var modal = document.getElementById("demoModal");
+  var video = modal.querySelector('iframe'); // Get the video iframe
+
+  // Pause the video
+  if (video) {
+    var videoSrc = video.src;
+    video.src = ''; // Set the source to an empty string to stop the video
+    video.src = videoSrc; // Restore the original video source
+  }
+
+  modal.style.display = "none";
+
+  // Remove the window.onclick event when the modal is closed
+  window.onclick = null;
+}
 

@@ -566,3 +566,144 @@ button:hover {
     max-height: 10em;
     transform: none;
 }
+
+#projects .card .hover_content .clickable-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#projects .card .hover_content .box {
+    display: inline-block;
+    padding: 10px 0; /* Adjust top and bottom padding as needed */
+    width: 30%; /* Adjust the width as needed */
+    text-align: center;
+    background-color: #26a69a; /* Adjust the color as needed */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#projects .card .hover_content .box:hover {
+    background-color: #00796b; /* Adjust the hover color as needed */
+}
+
+#projects .card .hover_content .box i {
+    margin-right: 5px; /* Adjust the spacing between icon and text */
+  }
+
+/* Add styles for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal iframe {
+    width: 50%;
+    height: 50%;
+    margin: 10% auto;
+    display: block;
+  }
+  
+  /* Style the close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Add an animation effect to the modal */
+  @keyframes modalFade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the animation to the modal */
+  .modal {
+    animation: modalFade 0.5s;
+  }  
+
+  .video-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+  position: relative;
+  max-width: 800px; /* Adjust the width as needed */
+  margin: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+  
+.gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+  }
+  
+  .item {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    transition: flex 0.8s ease;
+    position: relative;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Added opacity transition */
+  }
+  
+  .item:hover img {
+    transform: scale(1);
+    opacity: 1; /* Ensures the hovered image is fully opaque */
+  }
+  
+  /* Apply opacity to non-hovered items when any item is hovered */
+  .gallery-wrap:hover .item:not(:hover) img {
+    opacity: 0.3; /* You can adjust the opacity value */
+  }
+  
+  .item:hover {
+    flex: 7;
+  }
+  
+  

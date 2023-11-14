@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <title>Manh Khang Nguyen - Portfolio</title>
 </head>
 <body>
@@ -53,7 +54,7 @@
               
               <li>
                 <div class="content">
-                  <h3><a href="https:/bsc.coop/">Berkeley Student Cooperative</a></h3>
+                  <h3><a href="https://bsc.coop/">Berkeley Student Cooperative</a></h3>
                   <h4>Maintenance Manager (January 2023 - May 2023)</h4>
                   <p>Led and supervised the maintenance and upkeep of the Cloyne Court Co-op house's facilities, ensured a comfortable and safe environment for 140 residents.</p>
                   <h4>House Manager (September 2022 - December 2022)</h4>
@@ -134,15 +135,37 @@
         <p>Presenting a glimpse of my past project endeavors and accomplishments!</p>
 
         <div class="container">
-            <div class="card new-card">
-              <div class="content">
-                <h1>Pixel Physics Simulation</h1>
-                <h4>Computer Graphics</h4>
-                <div class="hover_content">
-                  <p>Nothing to look here :))</p>
+          <div class="card new-card">
+            <div class="content">
+              <h1>Pixel Physics Simulation</h1>
+              <h4>Computer Graphics</h4>
+              <div class="hover_content">
+                <p>Nothing to look here :))</p>
+                <div class="clickable-boxes">
+                  <a href="javascript:void(0)" class="box demo-box" onclick="showDemoVideo()">
+                    <i class="fas fa-laptop-code"></i> Demo
+                  </a>
+                  <!-- Add "id" attribute to the modal element -->
+                  <div id="demoModal" class="modal">
+                    <!-- Add an element to close the modal -->
+                    <span class="close" onclick="closeDemoVideo()">&times;</span>
+                    <!-- Embed YouTube video using an iframe -->
+                    <iframe src="https://www.youtube.com/embed/IeFWNtMo1Fs?si=VogxtSG-s9zUCTYI" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <a href="javascript:void(0)" class="box paper-box">
+                    <i class="fas fa-file-alt"></i> Paper
+                  </a>
+                  <a href="javascript:void(0)" class="box github-box">
+                    <i class="fab fa-github"></i> Github
+                  </a>
                 </div>
               </div>
-            </div>   
+            </div>
+          </div>
+          
+          
+          
+        
             
             <div class="card new-card">
                 <div class="content">
@@ -229,9 +252,48 @@
     <section id="hobbies">
         <h2>Hobbies</h2>
         <p>Beyond the realm of circuits and code, I find joy in the art of culinary exploration, fueled by my love for cooking, as well as in indulging my passion for collecting and restoring watches and immersing myself in the captivating world of James Bond's adventures.</p>
+    
+        <div class="gallery-container">
+          <h1>Cooking</h1>
+          <p>Notoriously regard as the "Blender Man" at the coop house that I lived at, I was known for my expertise in making daily smoothies, juices, and milkshakes, specifically avocado smoothie. So, here are some food that I cooked recently. </p>
+          <div class="gallery-wrap">
+            <div class="item">
+              <img src="pictures/burger.JPG" alt="Food 1">
+            </div>
+            <div class="item">
+              <img src="pictures/steak.JPG" alt="Food 2">
+            </div>
+            <div class="item">
+              <img src="pictures/turkey.JPG" alt="Food 3">
+            </div>
+            <div class="item">
+              <img src="pictures/tofu.JPG" alt="Food 4">
+            </div>
+            <div class="item">
+              <img src="pictures/chicken.JPG" alt="Food 5">
+            </div>
+            <div class="item">
+              <img src="pictures/beef.JPG" alt="Food 6">
+            </div>
+            <div class="item">
+              <img src="pictures/lobster.JPG" alt="Food 7">
+            </div>
+            <div class="item">
+              <img src="pictures/salmon.JPG" alt="Food 8">
+            </div>
+          </div>
+        </div>
+
+
     </section>
+    
 
     <section id="contact">
+      
+      
+      
+
+
         <h2>Contact</h2>
         <div class="contact-info">
             <p>Email: <a href="mailto:manhkhang@berkeley.edu" >manhkhang@berkeley.edu</a> (Professional) || <a href="mailto:manhkng@gmail.com" >manhkng@gmail.com</a> (Personal)</p>
@@ -257,6 +319,8 @@
             <button type="submit">Send</button>
         </form>
     </section>
+
+    
 
     <footer>
         <p>Copyright © Manh Khang Nguyen 2023</p>
