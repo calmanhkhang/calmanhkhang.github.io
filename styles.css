@@ -2,19 +2,85 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    height: -150px; /* Adjust the height based on your header's height */
-    margin-top: 150px; /* Negative margin to overlap with the header */
+    height: -150px;
+    margin-top: 150px;
+    overflow: auto;
+    background: linear-gradient(315deg, #44B09E 0%, #E0D2C7 100%); /* Brighter teal gradient */
+    animation: gradient 60s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
 }
 
+/* ... (rest of your existing styles) */
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 30s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 45s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 60s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
 
 /*** --- Header --- ***/
 header {
     position: fixed;
     top: 0; /* Fixed position at the top of the viewport */
     width: 100%;
-    background: #b2dfdb;
+    background: #a1d6d2;
     padding: 20px 0;
     text-align: center;
     z-index: 1000;
@@ -23,7 +89,7 @@ header {
 }
 
 header:hover {
-    background-color: #a1d6d2; /* Adjust the background color on hover */
+    background-color: #80CBC4; /* Adjust the background color on hover */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adjust the box-shadow on hover */
 }
 
@@ -47,7 +113,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #26a69a;
+    color: #009688;
 }
 
 /* Cool Animation */
@@ -59,14 +125,14 @@ nav a::after {
     display: block;
     margin-top: 8px;
     right: 0;
-    background: #26a69a;
+    background: #009688;
     transition: width 0.3s;
 }
 
 nav a:hover::after {
     width: 100%;
     left: 0;
-    background: #26a69a;
+    background: #009688;
 }
 
 /*** --- About me --- ***/
@@ -79,7 +145,6 @@ nav a:hover::after {
 
 /*** --- About me --- ***/
 #about-me {
-    background-color: #f5f5f5;
     animation: slideUp 1s ease-in-out;
     text-align: center;
 }
@@ -92,7 +157,7 @@ nav a:hover::after {
 
 /*- Dialogue-*/
 #about-me .dialogue-box {
-    background-color: #26a69a;
+    background-color: #009688;
     color: #fff;
     padding: 10px 20px;
     border-top-left-radius: 20px;
@@ -112,7 +177,7 @@ nav a:hover::after {
     transform: rotate(-90deg);
     border-width: 20px 0 20px 20px;
     border-style: solid;
-    border-color: transparent transparent transparent #26a69a;
+    border-color: transparent transparent transparent #009688;
 }
 
 #about-me img {
@@ -120,7 +185,7 @@ nav a:hover::after {
     height: 270px; /* Adjust the image size as needed */
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #26a69a; /* Add a border with the color of your choice */
+    border: 5px solid #009688; /* Add a border with the color of your choice */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a lifted effect */
     transition: transform 0.2s ease-in-out; /* Add a smooth transition for hover effect */
 }
@@ -148,7 +213,7 @@ nav a:hover::after {
 /*** --- General Styling --- ***/
 section {
     padding: 50px 20px;
-    background-color: rgba(245, 245, 245, 0.9);
+    background-color: rgba(245, 245, 245, 0.3); /* Adjust the alpha channel value */
     animation: slideUp 1s ease-in-out;
     max-width: 70%;
     min-width: 30%;
@@ -173,7 +238,7 @@ section {
 h2 {
     text-align: center;
     font-size: 2.5em;
-    color: #26a69a;
+    color: #009688;
     margin: 0;
 }
 
@@ -188,7 +253,7 @@ p {
 
 
 a {
-    color: #26a69a;
+    color: #009688;
     text-decoration: none;
 }
 
@@ -275,9 +340,9 @@ footer {
     height: 10px;
     top: 24px;
     right: -6px;
-    background: #26a69a; /* Updated color */
+    background: #009688; /* Updated color */
     border-radius: 50%;
-    box-shadow: 0 0 0 3px #26a69a; /* Updated color */
+    box-shadow: 0 0 0 3px #009688; /* Updated color */
 }
 
 .timeline ul li:nth-child(even):before {
@@ -287,15 +352,15 @@ footer {
     height: 10px;
     top: 24px;
     left: -4px;
-    background: #26a69a; /* Updated color */
+    background: #009688; /* Updated color */
     border-radius: 50%;
-    box-shadow: 0 0 0 3px #26a69a; /* Updated color */
+    box-shadow: 0 0 0 3px #009688; /* Updated color */
 }
 
 .timeline ul li h3 {
     padding: 0;
     margin: 0;
-    color: #26a69a; /* Updated color */
+    color: #009688; /* Updated color */
     font-weight: 600;
 }
 
@@ -324,10 +389,10 @@ footer {
     left: 550px;
     margin: 0;
     padding: 8px 16px;
-    background: #26a69a; /* Updated color */
+    background: #009688; /* Updated color */
     color: #fff;
     border-radius: 18px;
-    box-shadow: 0 0 0 3px #26a69a; /* Updated color */
+    box-shadow: 0 0 0 3px #009688; /* Updated color */
 }
 
 .timeline ul li:nth-child(even) .time {
@@ -336,10 +401,10 @@ footer {
     right: 550px;
     margin: 0;
     padding: 8px 16px;
-    background: #26a69a; /* Updated color */
+    background: #009688; /* Updated color */
     color: #fff;
     border-radius: 18px;
-    box-shadow: 0 0 0 3px #26a69a; /* Updated color */
+    box-shadow: 0 0 0 3px #009688; /* Updated color */
 }
 
 @media (max-width: 1000px) {
@@ -384,7 +449,7 @@ footer {
 /*** --- Resume --- ***/
 .resume-box {
     text-align: center;
-    background: #26a69a; /* Background color */
+    background: #009688; /* Background color */
     padding: 15px;
     border-radius: 8px;
     margin: 20px auto;
@@ -442,7 +507,7 @@ textarea {
 }
 
 button {
-    background-color: #26a69a;
+    background-color: #009688;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -482,6 +547,7 @@ button:hover {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12);
     transition: all 0.35s ease;
     margin-top: 40px; /* Added margin on top of each card */
+    
 }
 
 #projects .card::before,
@@ -491,7 +557,7 @@ button:hover {
     top: 0;
     left: 0;
     width: 100%;
-    background: #26a69a; /* Adjust the color as needed */
+    background: #009688; /* Adjust the color as needed */
     height: 4px;
 }
 
@@ -529,7 +595,7 @@ button:hover {
 
 
 #projects .card h4 {
-    color: #26a69a; /* Adjust the color as needed */
+    color: #009688; /* Adjust the color as needed */
     font-weight: 600;
     margin: 0;
     letter-spacing: 2px;
@@ -589,7 +655,7 @@ button:hover {
     padding: 10px 0; /* Adjust top and bottom padding as needed */
     width: 30%; /* Adjust the width as needed */
     text-align: center;
-    background-color: #26a69a; /* Adjust the color as needed */
+    background-color: #009688; /* Adjust the color as needed */
     color: white;
     text-decoration: none;
     border-radius: 5px;
