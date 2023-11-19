@@ -213,17 +213,16 @@ nav a:hover::after {
 /*** --- General Styling --- ***/
 section {
     padding: 50px 20px;
-    background-color: rgba(245, 245, 245, 0.3); /* Adjust the alpha channel value */
+    background-color: rgba(245, 245, 245, 0.6); /* Lighter background color for glossiness */
     animation: slideUp 1s ease-in-out;
     max-width: 70%;
     min-width: 30%;
-    margin: 0 auto 100px; /* Added margin-bottom for space between sections */
+    margin: 0 auto 100px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    scroll-margin-top: 150px; 
+    backdrop-filter: blur(10px) brightness(110%); /* Increase brightness for a glossy effect */
+    scroll-margin-top: 150px;
 }
-
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -291,7 +290,7 @@ footer {
     position: relative;
     margin: 50px auto;
     padding: 40px 0;
-    width: 1000px;
+    width: 90%;
     box-sizing: border-box;
 }
 
@@ -364,11 +363,16 @@ footer {
     font-weight: 600;
 }
 
-.timeline ul li p {
-    margin: 0px 0 0;
-    padding: 0;
+
+
+.timeline ul li:nth-child(odd) p {
+    text-align: right;
+    max-width: 100%;
+}
+
+.timeline ul li:nth-child(even) p {
     text-align: left;
-    margin-block-end: 1.5em;
+    max-width: 100%;
 }
 
 .timeline ul li h4 {
@@ -386,7 +390,7 @@ footer {
 .timeline ul li:nth-child(odd) .time {
     position: absolute;
     top: 12px;
-    left: 550px;
+    right: -220px;
     margin: 0;
     padding: 8px 16px;
     background: #009688; /* Updated color */
@@ -398,7 +402,7 @@ footer {
 .timeline ul li:nth-child(even) .time {
     position: absolute;
     top: 12px;
-    right: 550px;
+    left: -220px;
     margin: 0;
     padding: 8px 16px;
     background: #009688; /* Updated color */
@@ -749,8 +753,9 @@ button:hover {
 .gallery-wrap {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 50vh;
+    width: 80%;
+    height: 40vh;
+    margin: auto;
   }
   
   .item {
