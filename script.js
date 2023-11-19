@@ -167,4 +167,18 @@ function closeDemoVideo() {
   window.onclick = null;
 }
 
+// Scroll with extra page to section when clicking on header link
+function scrollToSection(sectionId) {
+  var section = document.getElementById(sectionId);
 
+  if (section) {
+      var headerHeight = document.querySelector('header').offsetHeight;
+      var extraOffset = 50; // Adjust this value based on your preference
+      var offset = headerHeight + extraOffset;
+
+      window.scrollTo({
+          top: section.offsetTop - offset,
+          behavior: 'smooth'
+      });
+  }
+}

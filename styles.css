@@ -213,7 +213,7 @@ nav a:hover::after {
 /*** --- General Styling --- ***/
 section {
     padding: 50px 20px;
-    background-color: rgba(245, 245, 245, 0.6); /* Lighter background color for glossiness */
+    background-color: rgba(245, 245, 245, 0.3); /* Lighter background color for glossiness */
     animation: slideUp 1s ease-in-out;
     max-width: 70%;
     min-width: 30%;
@@ -222,7 +222,33 @@ section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px) brightness(110%); /* Increase brightness for a glossy effect */
     scroll-margin-top: 150px;
+    overflow: hidden;
 }
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+        319deg,
+        #aed9c2 0%,     
+        #c5f4e0 40%,    
+        #EDF1F4 100%
+    );
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+section:hover::before {
+    opacity: 1;
+}
+
+
+
 @keyframes slideUp {
     from {
         opacity: 0;
