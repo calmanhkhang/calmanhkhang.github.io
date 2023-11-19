@@ -9,6 +9,8 @@ body {
     animation: gradient 60s ease infinite;
     background-size: 400% 400%;
     background-attachment: fixed;
+    min-width: 768px; /* Adjust the minimum width as needed */
+    min-height: 1366px; /* Adjust the minimum height as needed */
 }
 
 /* ... (rest of your existing styles) */
@@ -223,6 +225,7 @@ section {
     backdrop-filter: blur(10px) brightness(110%); /* Increase brightness for a glossy effect */
     scroll-margin-top: 150px;
     overflow: hidden;
+    max-width: 80%;
 }
 
 section::before {
@@ -235,7 +238,7 @@ section::before {
     background: linear-gradient(
         319deg,
         #aed9c2 0%,     
-        #c5f4e0 40%,    
+        #c5f4e0 30%,    
         #EDF1F4 100%
     );
     z-index: -1;
@@ -557,12 +560,11 @@ button:hover {
 /* Card */
 #projects .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
-    gap: 40px; /* Increased gap between cards */
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 5%; /* Increased gap between cards */
     justify-content: center;
-    width: 70%;
-    margin: 40px auto; /* Added margin on top and bottom of the container */
+    width: 90%;
+    margin: 5% auto; /* Added margin on top and bottom of the container */
 }
 
 #projects .card {
@@ -571,14 +573,14 @@ button:hover {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    width: 24em;
+    width: 100%;
     padding: 2em 0;
     background: #eceff1; /* Adjust the background color as needed */
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12);
     transition: all 0.35s ease;
-    margin-top: 40px; /* Added margin on top of each card */
-    
+    margin-top: 5%; /* Added margin on top of each card */
 }
+
 
 #projects .card::before,
 #projects .card::after {
@@ -605,13 +607,14 @@ button:hover {
 }
 
 #projects .card .content {
-    width: 20em;
+    width: 80%;
     max-width: 100%;
 }
 
 #projects .card .logo {
     margin: 0 0 1em;
-    width: 10.625em;
+    width: 50%; /* Adjust the width as needed */
+    max-width: 100%;
     transition: all 0.35s ease;
 }
 
@@ -621,6 +624,7 @@ button:hover {
     margin: 0;
     letter-spacing: 2px;
     text-align: center;
+    font-size: 1.5em;
 }
 
 
@@ -630,6 +634,7 @@ button:hover {
     margin: 0;
     letter-spacing: 2px;
     text-align: center;
+    font-size: 1em;
 }
 
 #projects .card .hover_content {
@@ -644,10 +649,11 @@ button:hover {
     color: #555; /* Adjust the color as needed */
     line-height: 1.4em;
     max-width: 100%;
+    font-size: 1em;
 }
 
 #projects .card:hover {
-    width: 24em;
+    width: 100%;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -669,7 +675,7 @@ button:hover {
 }
 
 #projects .card:hover .hover_content {
-    max-height: 300px; /* Adjust the value accordingly */
+    max-height: 500px; /* Adjust the value accordingly */
     transition: all 1s ease;
     transform: none;
 }
@@ -678,6 +684,7 @@ button:hover {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    padding: 1em;
 }
 
 #projects .card .hover_content .box {
@@ -815,3 +822,48 @@ button:hover {
   }
   
   
+  @media (max-width: 1200px) {
+    /* Add styles for screens up to 1200px wide */
+    .timeline ul li {
+        width: 100%; /* Adjust the width for better responsiveness */
+        text-align: center;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Add styles for screens up to 767px wide */
+    .timeline {
+        padding-bottom: 0;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .timeline:before {
+        left: 20px;
+        height: 100%;
+    }
+
+    .timeline ul li {
+        width: 100%;
+        text-align: left;
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+
+    .timeline ul li:nth-child(odd):before,
+    .timeline ul li:nth-child(even):before {
+        top: -18px;
+        left: 16px;
+    }
+
+    .timeline ul li:nth-child(odd) .time,
+    .timeline ul li:nth-child(even) .time {
+        top: -30px;
+        left: 50px;
+        right: inherit;
+    }
+}
